@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="JuN-Ih-pDG">
             <objects>
-                <tabBarController id="qoS-Gy-352" sceneMemberID="viewController">
+                <tabBarController id="qoS-Gy-352" customClass="TabBarViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="BMM-Ko-8jq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -28,9 +28,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="hag-HM-Ppf" kind="relationship" relationship="viewControllers" id="zLt-OD-OqK"/>
-                        <segue destination="g90-vB-f3I" kind="relationship" relationship="viewControllers" id="wam-qa-pjZ"/>
                         <segue destination="7nc-8Q-XmJ" kind="relationship" relationship="viewControllers" id="fZ3-W0-nyV"/>
                         <segue destination="q7X-py-OhQ" kind="relationship" relationship="viewControllers" id="scV-rG-9YX"/>
+                        <segue destination="g90-vB-f3I" kind="relationship" relationship="viewControllers" id="gKx-M1-AzN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zp-sy-yl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MZt-Fj-jEk" id="VLE-4g-db9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="92" y="996"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="0dh-T8-MDH">
             <objects>
-                <viewController id="GLY-0t-5jw" sceneMemberID="viewController">
+                <viewController id="GLY-0t-5jw" customClass="WelcomeViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A8V-Da-IKw"/>
                         <viewControllerLayoutGuide type="bottom" id="GeM-dd-BqH"/>
@@ -152,6 +152,14 @@
                                             <segue destination="klh-SM-tji" kind="show" id="OiT-4H-Qh8"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEE-ZT-QLj">
+                                        <rect key="frame" x="164" y="503" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="test:" destination="GLY-0t-5jw" eventType="touchUpInside" id="WcI-rT-U1j"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.27967160160605781" green="0.31101953214151651" blue="0.37609057741116747" alpha="0.75497645547945202" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -192,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="808.79999999999995" y="-1746.4767616191905"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Create New Account-->
         <scene sceneID="d90-iy-kgM">
             <objects>
-                <tableViewController id="QIo-aD-JYk" sceneMemberID="viewController">
+                <tableViewController id="QIo-aD-JYk" customClass="SignUpTableViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tbG-il-Efe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +216,9 @@
                                     <rect key="frame" x="111" y="84" width="152" height="30"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                     <state key="normal" title="Change Profile Photo"/>
+                                    <connections>
+                                        <action selector="changeProfilePhotoDidTap:" destination="QIo-aD-JYk" eventType="touchUpInside" id="oKO-1G-nFy"/>
+                                    </connections>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="6sE-rz-YUV">
                                     <rect key="frame" x="155" y="8" width="64" height="64"/>
@@ -229,10 +240,10 @@
                             <tableViewSection headerTitle="NEW ACCOUNT" id="Mlu-cc-5CD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cFo-V0-Xwe">
-                                        <rect key="frame" x="0.0" y="169.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="170" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cFo-V0-Xwe" id="CTa-fI-ChY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-email" translatesAutoresizingMaskIntoConstraints="NO" id="huK-oI-AsX">
@@ -251,7 +262,6 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pqa-Xv-lqP" firstAttribute="leading" secondItem="huK-oI-AsX" secondAttribute="trailing" constant="8" id="41E-lF-SBm"/>
-                                                <constraint firstAttribute="bottom" secondItem="huK-oI-AsX" secondAttribute="bottom" constant="12" id="5pE-Yo-hjE"/>
                                                 <constraint firstAttribute="trailing" secondItem="pqa-Xv-lqP" secondAttribute="trailing" constant="8" id="HLG-0x-yXZ"/>
                                                 <constraint firstItem="pqa-Xv-lqP" firstAttribute="top" secondItem="CTa-fI-ChY" secondAttribute="top" constant="6" id="MEt-Cc-RXh"/>
                                                 <constraint firstItem="huK-oI-AsX" firstAttribute="top" secondItem="CTa-fI-ChY" secondAttribute="top" constant="12" id="ey4-ia-k5W"/>
@@ -261,10 +271,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dK8-PI-xnw">
-                                        <rect key="frame" x="0.0" y="213.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="214" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dK8-PI-xnw" id="udn-Ez-BxE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-fullName" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-Uq-2qD">
@@ -282,7 +292,6 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="8Xn-Uq-2qD" secondAttribute="bottom" constant="12" id="4Ze-Ea-cPH"/>
                                                 <constraint firstItem="hQe-s9-o3n" firstAttribute="leading" secondItem="8Xn-Uq-2qD" secondAttribute="trailing" constant="8" id="DvT-Eb-LWn"/>
                                                 <constraint firstItem="hQe-s9-o3n" firstAttribute="top" secondItem="udn-Ez-BxE" secondAttribute="top" constant="6" id="E5x-Ef-IUk"/>
                                                 <constraint firstItem="8Xn-Uq-2qD" firstAttribute="top" secondItem="udn-Ez-BxE" secondAttribute="top" constant="12" id="FdE-zU-V0Q"/>
@@ -293,10 +302,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9gO-EN-6Es">
-                                        <rect key="frame" x="0.0" y="257.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="258" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9gO-EN-6Es" id="ztl-J6-lPV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-username" translatesAutoresizingMaskIntoConstraints="NO" id="N2x-Br-113">
@@ -315,7 +324,6 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="eNK-qZ-6aw" secondAttribute="trailing" constant="8" id="0Dq-8G-OCo"/>
-                                                <constraint firstAttribute="bottom" secondItem="N2x-Br-113" secondAttribute="bottom" constant="12" id="9uy-5f-nZB"/>
                                                 <constraint firstItem="N2x-Br-113" firstAttribute="top" secondItem="ztl-J6-lPV" secondAttribute="top" constant="12" id="Luf-Ft-Oq4"/>
                                                 <constraint firstItem="eNK-qZ-6aw" firstAttribute="leading" secondItem="N2x-Br-113" secondAttribute="trailing" constant="8" id="Onq-ya-oHe"/>
                                                 <constraint firstItem="eNK-qZ-6aw" firstAttribute="top" secondItem="ztl-J6-lPV" secondAttribute="top" constant="6" id="RT7-Le-Lw6"/>
@@ -329,10 +337,10 @@
                             <tableViewSection id="MVT-SX-Ro4">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TvG-d1-ITN">
-                                        <rect key="frame" x="0.0" y="337.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="338" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TvG-d1-ITN" id="Fmi-Ss-2gW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="Q2F-ve-wHS">
@@ -355,7 +363,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="olv-NR-vbN" secondAttribute="trailing" constant="8" id="MP1-dd-8sz"/>
                                                 <constraint firstItem="olv-NR-vbN" firstAttribute="top" secondItem="Fmi-Ss-2gW" secondAttribute="top" constant="6" id="QKp-h8-gu3"/>
                                                 <constraint firstItem="olv-NR-vbN" firstAttribute="leading" secondItem="Q2F-ve-wHS" secondAttribute="trailing" constant="8" id="hE1-0H-g6G"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q2F-ve-wHS" secondAttribute="bottom" constant="12" id="jtl-kR-Ip0"/>
                                                 <constraint firstItem="Q2F-ve-wHS" firstAttribute="top" secondItem="Fmi-Ss-2gW" secondAttribute="top" constant="12" id="nAR-f4-jGp"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -365,10 +372,10 @@
                             <tableViewSection id="z5r-7l-1pN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NU9-0R-d0p">
-                                        <rect key="frame" x="0.0" y="417.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="418" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NU9-0R-d0p" id="WzO-dt-mg5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-Sx-y1D">
@@ -377,6 +384,9 @@
                                                     <state key="normal" title="Create New Account">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="createNewAccountDidTap" destination="QIo-aD-JYk" eventType="touchUpInside" id="VPA-Ic-PII"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -395,20 +405,31 @@
                             <outlet property="delegate" destination="QIo-aD-JYk" id="JqW-mX-ucE"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem image="icon-back" id="r9z-yV-t58"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="J8K-p6-BU0"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Create New Account" id="J8K-p6-BU0">
+                        <barButtonItem key="leftBarButtonItem" image="icon-back" id="r9z-yV-t58">
+                            <connections>
+                                <action selector="backDidTap:" destination="QIo-aD-JYk" id="XDa-EP-Il3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="pqa-Xv-lqP" id="abT-hD-4Fn"/>
+                        <outlet property="fullNameTextField" destination="hQe-s9-o3n" id="y36-PW-IIF"/>
+                        <outlet property="passwordTextField" destination="olv-NR-vbN" id="7PO-kE-ooG"/>
+                        <outlet property="profileImageView" destination="6sE-rz-YUV" id="aGm-hH-yLZ"/>
+                        <outlet property="usernameTextField" destination="eNK-qZ-6aw" id="B8A-LT-WIr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5D-iV-djo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2620" y="-1756.3718140929536"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Log In-->
         <scene sceneID="eFy-nl-I0g">
             <objects>
-                <tableViewController id="7kf-1R-XKs" sceneMemberID="viewController">
+                <tableViewController id="7kf-1R-XKs" customClass="LoginTableViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Nya-a9-8bI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -417,24 +438,24 @@
                             <tableViewSection headerTitle="LOG INTO YOUR ACCOUNT" id="8wv-Se-1hu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GaS-rt-WTM">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GaS-rt-WTM" id="Fyf-zl-ty6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-username" translatesAutoresizingMaskIntoConstraints="NO" id="s8M-us-4k2">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-email" translatesAutoresizingMaskIntoConstraints="NO" id="s8M-us-4k2">
                                                     <rect key="frame" x="12" y="12" width="19" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="19" id="YKr-vh-QKn"/>
                                                         <constraint firstAttribute="height" constant="19" id="xli-ag-FCO"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yip-Tr-t5z">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Example@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yip-Tr-t5z">
                                                     <rect key="frame" x="39" y="6" width="328" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -443,16 +464,15 @@
                                                 <constraint firstItem="s8M-us-4k2" firstAttribute="leading" secondItem="Fyf-zl-ty6" secondAttribute="leading" constant="12" id="RAY-hs-hTW"/>
                                                 <constraint firstAttribute="trailing" secondItem="yip-Tr-t5z" secondAttribute="trailing" constant="8" id="SZX-FM-eUl"/>
                                                 <constraint firstItem="s8M-us-4k2" firstAttribute="top" secondItem="Fyf-zl-ty6" secondAttribute="top" constant="12" id="Vlw-MF-LsJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="s8M-us-4k2" secondAttribute="bottom" constant="12" id="rx2-F0-Rzw"/>
                                                 <constraint firstItem="yip-Tr-t5z" firstAttribute="leading" secondItem="s8M-us-4k2" secondAttribute="trailing" constant="8" id="sUe-2p-ucj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3uX-zL-tJl">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3uX-zL-tJl" id="3Ai-KE-K5Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="UKm-Oi-rm7">
@@ -466,12 +486,11 @@
                                                     <rect key="frame" x="39" y="6" width="328" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="tyc-Xt-bVo" secondAttribute="trailing" constant="8" id="1iQ-1C-4yR"/>
-                                                <constraint firstAttribute="bottom" secondItem="UKm-Oi-rm7" secondAttribute="bottom" constant="12" id="V8L-vU-0zF"/>
                                                 <constraint firstItem="tyc-Xt-bVo" firstAttribute="leading" secondItem="UKm-Oi-rm7" secondAttribute="trailing" constant="8" id="W4W-M9-oxc"/>
                                                 <constraint firstItem="UKm-Oi-rm7" firstAttribute="leading" secondItem="3Ai-KE-K5Q" secondAttribute="leading" constant="12" id="XOt-co-sqh"/>
                                                 <constraint firstAttribute="bottom" secondItem="tyc-Xt-bVo" secondAttribute="bottom" constant="7" id="Y5B-0C-W7L"/>
@@ -485,10 +504,10 @@
                             <tableViewSection id="TpE-2c-NRW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XCd-LN-bxl">
-                                        <rect key="frame" x="0.0" y="179.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="180" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XCd-LN-bxl" id="bnb-Jp-gjf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAd-M1-l45">
@@ -498,6 +517,9 @@
                                                     <state key="normal" title="Log In">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="loginDidTap" destination="7kf-1R-XKs" eventType="touchUpInside" id="Ydb-ln-pqc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -516,13 +538,20 @@
                             <outlet property="delegate" destination="7kf-1R-XKs" id="fUY-5k-f2p"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem image="icon-back" id="CNT-UB-eUJ">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Log In" id="77i-HX-86Z">
+                        <barButtonItem key="leftBarButtonItem" image="icon-back" id="CNT-UB-eUJ">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backDidTap:" destination="7kf-1R-XKs" id="a4j-4b-qkU"/>
+                            </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="77i-HX-86Z"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="yip-Tr-t5z" id="STy-2e-brL"/>
+                        <outlet property="passwordTextField" destination="tyc-Xt-bVo" id="PgS-El-K54"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vep-Q6-gFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -563,7 +592,7 @@
         <!--Moments-->
         <scene sceneID="5gL-U9-9xQ">
             <objects>
-                <tableViewController id="PtL-UW-ww3" sceneMemberID="viewController">
+                <tableViewController id="PtL-UW-ww3" customClass="NewsFeedTableViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lm6-2v-cTJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -573,7 +602,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dX9-Eg-XuT" id="FSj-tn-GCS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t9" translatesAutoresizingMaskIntoConstraints="NO" id="djW-oo-T6f">
@@ -606,7 +635,7 @@
                                 <rect key="frame" x="0.0" y="85" width="375" height="578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5GL-lk-2fK" id="OBU-qg-InF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="577.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="7Se-3T-eFB">
@@ -732,7 +761,7 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <segue destination="b9E-4l-mqd" kind="show" identifier="ShowMediaDetail" id="frZ-bg-SDa"/>
-                        <segue destination="GLY-0t-5jw" kind="presentation" id="ATM-BT-T0B"/>
+                        <segue destination="GLY-0t-5jw" kind="presentation" identifier="ShowWelcomeViewController" id="ATM-BT-T0B"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUP-6u-CRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -768,7 +797,7 @@
         <!--New Post-->
         <scene sceneID="1Gc-Mf-sFU">
             <objects>
-                <tableViewController id="9IH-h2-lx1" sceneMemberID="viewController">
+                <tableViewController id="9IH-h2-lx1" customClass="PostComposerViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="PMp-oV-59i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -780,7 +809,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="161"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iU-FP-BnN" id="UEG-Gw-xde">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oyb-aX-vlG">
@@ -816,7 +845,7 @@
                                         <rect key="frame" x="0.0" y="252" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mBf-D4-TJL" id="D04-z5-yKp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-facebook" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-vn-15u">
@@ -850,7 +879,7 @@
                                         <rect key="frame" x="0.0" y="296" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWO-At-WFQ" id="Wvc-E2-63w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-twitter" translatesAutoresizingMaskIntoConstraints="NO" id="hoP-ZE-6QR">
@@ -884,7 +913,7 @@
                                         <rect key="frame" x="0.0" y="340" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zud-nN-fHN" id="Iew-sH-JRN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-tumblr" translatesAutoresizingMaskIntoConstraints="NO" id="L5M-bE-Wea">
@@ -925,20 +954,31 @@
                     <navigationItem key="navigationItem" title="New Post" id="SiR-dc-oWT">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Wfo-jS-1Ea">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelDidTap:" destination="9IH-h2-lx1" id="hAU-9x-Nou"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="G3l-8J-LLI">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareDidTap:" destination="9IH-h2-lx1" id="nI9-nt-XH2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Oyb-aX-vlG" id="X2Y-r0-TOL"/>
+                        <outlet property="shareBarButton" destination="G3l-8J-LLI" id="DCI-yZ-nGW"/>
+                        <outlet property="textView" destination="fzW-VP-Ys0" id="unM-fs-wha"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuZ-aQ-eRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2198" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--Dummy Post Composer View Controller-->
         <scene sceneID="m3W-cf-Hid">
             <objects>
-                <viewController id="g90-vB-f3I" sceneMemberID="viewController">
+                <viewController id="g90-vB-f3I" customClass="DummyPostComposerViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ckB-Ce-W5c"/>
                         <viewControllerLayoutGuide type="bottom" id="Fcw-Pn-ex5"/>
@@ -954,12 +994,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btR-hX-kj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="112"/>
+            <point key="canvasLocation" x="-306" y="149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Et3-1k-wv6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7rD-G8-vt2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PostComposerNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="7rD-G8-vt2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon-camera" selectedImage="icon-camera-filled" id="w1t-98-icN">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JWX-J2-EvP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -972,12 +1015,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byf-gV-9PO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="112"/>
+            <point key="canvasLocation" x="545" y="149"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Profile-->
         <scene sceneID="4vr-y4-4Dg">
             <objects>
-                <tableViewController id="bvZ-2M-Gfu" sceneMemberID="viewController">
+                <tableViewController id="bvZ-2M-Gfu" customClass="ProfileTableViewController" customModule="InstagramLikeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2xg-GI-hAS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -987,7 +1030,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HWl-7n-spm" id="7Ja-vn-lrV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -997,7 +1040,13 @@
                             <outlet property="delegate" destination="bvZ-2M-Gfu" id="Ex3-gI-6GX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0en-jg-pRb"/>
+                    <navigationItem key="navigationItem" title="Profile" id="0en-jg-pRb">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="pbN-ST-h3k">
+                            <connections>
+                                <action selector="logOutDidTap:" destination="bvZ-2M-Gfu" id="TJ3-9w-dfD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbq-8P-65n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1037,7 +1086,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xm9-ap-IgA" id="afU-Ol-or8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t9" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-bk-aZE">
@@ -1070,7 +1119,7 @@
                                 <rect key="frame" x="0.0" y="85" width="375" height="578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sVo-kJ-F3R" id="CiO-XG-xg8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="577.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-Dz-tlG">
@@ -1189,7 +1238,7 @@
                                 <rect key="frame" x="0.0" y="663" width="375" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XQa-ys-c1x" id="DAR-MC-J3Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t9" translatesAutoresizingMaskIntoConstraints="NO" id="QMk-YM-Xke">
@@ -1233,12 +1282,12 @@
                             <outlet property="delegate" destination="b9E-4l-mqd" id="odQ-cz-9ts"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem image="icon-like" id="eC7-CV-yYB">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Moments" id="41a-Kn-0ar">
+                        <barButtonItem key="rightBarButtonItem" image="icon-like" id="eC7-CV-yYB">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Moments" id="41a-Kn-0ar"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
